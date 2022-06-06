@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "housemates",
+    "slug": "housemates",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
