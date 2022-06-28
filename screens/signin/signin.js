@@ -9,8 +9,10 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import HouseIcon from '@mui/icons-material/House';
 import GoogleIcon from '@mui/icons-material/Google';
 import AppleIcon from '@mui/icons-material/Apple';
+import PersonIcon from '@mui/icons-material/Person';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -33,11 +35,7 @@ const theme = createTheme();
 export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    console.log('Clicked on the button');
   };
 
   return (
@@ -46,24 +44,25 @@ export default function SignIn() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            width: '100%',
+            justifyContent: 'center'
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
+          <Avatar sx={{ mt: 3, mb: 2, bgcolor: 'secondary.main' }}>
+            <HouseIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            HOUSEMATES
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, width: '75%' }}>
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, justifyContent: 'space-evenly' }}
+              sx={{ mt: 3, mb: 2, justifyContent: 'space-evenly', color: '#000', backgroundColor: '#fff' }}
             >
               <GoogleIcon/>
               Sign In with Google
@@ -72,18 +71,20 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, justifyContent: 'space-evenly' }}
+              sx={{ mt: 3, mb: 2, justifyContent: 'space-evenly', color: '#000', backgroundColor: '#fff' }}
             >
               <AppleIcon/>
               Sign In with Apple
             </Button>
-            <Grid container>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2, justifyContent: 'space-evenly', color: '#000', backgroundColor: '#fff' }}
+            >
+              <PersonIcon/>
+              Sign In with a token
+            </Button>
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
