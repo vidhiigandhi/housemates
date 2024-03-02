@@ -17,19 +17,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 const theme = createTheme();
 
 export default function SignIn() {
@@ -48,14 +35,15 @@ export default function SignIn() {
             flexDirection: 'column',
             alignItems: 'center',
             width: '100%',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            marginBottom: '200px',
           }}
         >
-          <Avatar sx={{ mt: 3, mb: 2, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ mt: 3, mb: 2, bgcolor: 'secondary.main'}}>
             <HouseIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            HOUSEMATES
+          <Typography component="h1" variant="h5" sx={{ marginBottom: '50px' }}>
+            Housemates
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, width: '75%' }}>
             <Button
@@ -73,7 +61,9 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2, justifyContent: 'space-evenly', color: '#000', backgroundColor: '#fff' }}
             >
-              <AppleIcon/>
+              <AppleIcon
+                sx={{ marginRight: '10px' }}
+              />
               Sign In with Apple
             </Button>
             <Button
@@ -87,7 +77,6 @@ export default function SignIn() {
             </Button>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
