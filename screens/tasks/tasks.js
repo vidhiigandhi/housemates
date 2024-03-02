@@ -22,7 +22,7 @@ const TaskPage = () => {
                 key={task.id}
                 disableGutters
                 left={() => (
-                  <Avatar alt={task.name} src={require('./path_to_profile_image.jpg')} />
+                  <Avatar alt={task.name} />
                 )}
               >
                 <View style={styles.textContainer}>
