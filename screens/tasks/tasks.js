@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { Avatar, List, Colors } from 'react-native-paper';
+import { Avatar } from '@mui/material';
+import { Typography, List, Paper } from '@mui/material';
 
 const TaskPage = () => {
   // Dummy data for tasks
@@ -13,26 +14,26 @@ const TaskPage = () => {
   return (
     <View style={styles.pageContainer}>
       <Text style={styles.heading}>Tasks</Text>
-      <View style={styles.innerContainer}>
+      <Paper style={styles.innerContainer}>
         <ScrollView contentContainerStyle={styles.scrollView}>
-          <List.Section>
+          <List>
             {tasks.map(task => (
               <List.Item
                 key={task.id}
-                title={task.name} 
-                description={task.task}
+                disableGutters
                 left={() => (
-                  <Avatar.Image
-                    size={50}
-                  />
+                  <Avatar alt={task.name} src={require('./path_to_profile_image.jpg')} />
                 )}
-                titleStyle={styles.title}
-                descriptionStyle={styles.description}
-              />
+              >
+                <View style={styles.textContainer}>
+                  <Typography variant="h6">{task.name}</Typography>
+                  <Typography variant="body1">{task.task}</Typography>
+                </View>
+              </List.Item>
             ))}
-          </List.Section>
+          </List>
         </ScrollView>
-      </View>
+      </Paper>
     </View>
   );
 };
@@ -60,13 +61,8 @@ const styles = StyleSheet.create({
   scrollView: {
     flexGrow: 1,
   },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  description: {
-    fontSize: 16,
-    color: Colors.grey600,
+  textContainer: {
+    marginLeft: 10,
   },
 });
 
