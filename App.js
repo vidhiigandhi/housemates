@@ -5,7 +5,7 @@ import { createMaterialBottomTabNavigator } from
 	"react-navigation-material-bottom-tabs";
 
 import HomeScreen from "./screens/home/home";
-import UserScreen from "./screens/user/user";
+import TasksScreen from "./screens/tasks/tasks";
 import SettingScreen from "./screens/settings/settings";
 
 const TabNavigator = createMaterialBottomTabNavigator(
@@ -23,10 +23,10 @@ const TabNavigator = createMaterialBottomTabNavigator(
 		),
 	},
 	},
-	User: {
-	screen: UserScreen,
+	Tasks: {
+	screen: TasksScreen,
 	navigationOptions: {
-		tabBarLabel: "User",
+		tabBarLabel: "Tasks",
 		tabBarIcon: (tabInfo) => (
 		<Ionicons
 			name="md-person-circle-outline"
