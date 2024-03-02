@@ -7,6 +7,8 @@ import { createMaterialBottomTabNavigator } from
 import HomeScreen from "./screens/home/home";
 import TasksScreen from "./screens/tasks/tasks";
 import SettingScreen from "./screens/settings/settings";
+import SignIn from "./screens/signin/signin";
+import { View } from 'react-native';
 
 const TabNavigator = createMaterialBottomTabNavigator(
 {
@@ -60,8 +62,11 @@ const Navigator = createAppContainer(TabNavigator);
 
 export default function App() {
 return (
-	<Navigator>
-	<HomeScreen />
-	</Navigator>
+	// <Navigator>
+	// <HomeScreen />
+	// </Navigator>
+	<View style={styles.container}>
+      <SignIn/>
+    </View>
 );
 }
